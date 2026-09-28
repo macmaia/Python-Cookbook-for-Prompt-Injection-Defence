@@ -99,5 +99,5 @@ The host is allowed, but that URL isn't the one the user wrote, so it doesn't go
 
 Hosts are checked by name and never resolved, so a name that's allowed but points at a private address (DNS rebinding) is the HTTP client's problem, not the gate's. And catraca guards tool calls: if your chat interface renders the model's *reply* as Markdown and fetches the images in it, that reply never passes through a tool call. Guard the renderer too. The threat model lists both.
 
-**Next:** When the value is yours and the attacker's (chapter 6, coming soon)
+**Next:** [When the value is yours and the attacker's](06-when-the-value-is-yours-and-theirs.ipynb)
 """)

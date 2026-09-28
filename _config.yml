@@ -2,6 +2,11 @@ title: Python Cookbook for Prompt Injection Defence
 author: Maria Alice Maia
 copyright: "2026"
 logo: ""
+description: >-
+  Runnable Python recipes for defending LLM agents against indirect prompt
+  injection and data exfiltration, with the catraca library: provenance checks
+  on tool-call arguments, egress rules, sealed plans and an auditable log.
+exclude_patterns: [_build, "ch*.py", build.py, README.md]
 execute:
   # Outputs are stored in the notebooks by build.py, which runs every cell.
   # The site shows exactly what the code printed, no kernel needed to publish.
@@ -12,6 +17,17 @@ repository:
 html:
   use_repository_button: true
   use_issues_button: true
+  baseurl: https://macmaia.github.io/Python-Cookbook-for-Prompt-Injection-Defence/
 sphinx:
+  extra_extensions:
+    - sphinx_sitemap
+    - sphinxext.opengraph
   config:
     language: en
+    html_baseurl: https://macmaia.github.io/Python-Cookbook-for-Prompt-Injection-Defence/
+    sitemap_url_scheme: "{link}"
+    html_extra_path: [robots.txt, llms.txt]
+    ogp_site_url: https://macmaia.github.io/Python-Cookbook-for-Prompt-Injection-Defence/
+    ogp_site_name: Python Cookbook for Prompt Injection Defence
+    ogp_type: article
+    ogp_enable_meta_description: true

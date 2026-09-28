@@ -6,3 +6,9 @@ chapters:
   - file: 03-a-gate-not-a-filter
   - file: 04-rewording-doesnt-help
   - file: 05-exfiltration-through-a-link
+  - file: 06-when-the-value-is-yours-and-theirs
+  - file: 07-plans-the-injection-cant-change
+  - file: 08-keeping-the-registry-honest
+  - file: 09-the-log-an-auditor-can-read
+  - file: 10-measuring-it-on-yourself
+  - file: 11-what-none-of-this-does
