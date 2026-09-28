@@ -90,7 +90,22 @@ for value in ["100.00", "10000", "4471", "44", "invoice 4471"]:
     print(f"{value!r:<16} {r.label.integrity.name:<10} {r.rule.value}")
 """)
 md("""
-`10000` isn't trusted just because the user wrote `100.00`: the digits are the same, the amount is a hundred times larger. `44` isn't trusted because it's a piece of `4471`, not a token of its own. This is deliberately strict. A looser rule would be easier to live with and much easier to attack, since an attacker only needs a trusted text that *contains* their value somewhere.
+`10000` isn't trusted just because the user wrote `100.00`: the digits are the same, the amount is a hundred times larger. `44` isn't trusted because it's a piece of `4471`, not a token of its own. The same goes for a piece that doesn't line up with the user's tokens.
+
+Numbers written in blocks need a closer look. The whole IBAN is trusted with or without its spaces. But each block is a whole token of the user's text, and so is each run of blocks:
+""")
+code("""
+iban = ContextRegistry(channels)
+iban.annotate("Transfer the deposit to GB29 NWBK 6016 1331 9268 19, please", "user")
+
+for value in ["GB29NWBK60161331926819", "GB29 NWBK 6016 1331 9268 19", "6016 1331 9268 19", "60161331926819", "6016133"]:
+    r = iban.resolve(value)
+    print(f"{value!r:<32} {r.label.integrity.name:<10} {r.rule.value}")
+""")
+md("""
+`6016133` cuts through a block, so it isn't trusted. The tail of the account number, though, comes out trusted, with or without its spaces. That's the whole-token rule doing what it says: the user did write those tokens. It's also a real limit. If a page steers the model into using only part of what the user typed, provenance can't tell, because every part of it came from the user. Chapter 11 comes back to this, together with the wider case of the attacker choosing between two values the user wrote. The practical advice is to pass account numbers from a system of record (a `STRUCTURED` channel) rather than from free text, and to check their format with a `pattern` in the policy.
+
+Taken together, this is deliberately strict. A looser rule would be easier to live with and much easier to attack, since an attacker only needs a trusted text that *contains* their value somewhere.
 
 The strictness has a price. A value the model worked out itself (a date from "tomorrow", a sum of two amounts) never appears in the user's words, so it comes out untrusted. Chapter 3 shows how a policy handles harmless arguments like that without opening the door for dangerous ones.
 
