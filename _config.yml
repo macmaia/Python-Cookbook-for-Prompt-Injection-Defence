@@ -1,0 +1,17 @@
+title: Python Cookbook for Prompt Injection Defence
+author: Maria Alice Maia
+copyright: "2026"
+logo: ""
+execute:
+  # Outputs are stored in the notebooks by build.py, which runs every cell.
+  # The site shows exactly what the code printed, no kernel needed to publish.
+  execute_notebooks: "off"
+repository:
+  url: https://github.com/macmaia/Python-Cookbook-for-Prompt-Injection-Defence
+  branch: main
+html:
+  use_repository_button: true
+  use_issues_button: true
+sphinx:
+  config:
+    language: en

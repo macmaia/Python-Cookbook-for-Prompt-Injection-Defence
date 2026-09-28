@@ -1,0 +1,8 @@
+format: jb-book
+root: intro
+chapters:
+  - file: 01-your-agent-followed-an-instruction
+  - file: 02-where-did-this-argument-come-from
+  - file: 03-a-gate-not-a-filter
+  - file: 04-rewording-doesnt-help
+  - file: 05-exfiltration-through-a-link
