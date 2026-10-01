@@ -6,7 +6,7 @@ md("""
 A security library that reports only its successes is selling something. This chapter measures catraca the way you'd measure it on your own agent: a small bank of cases, some attacks and some ordinary calls, and two numbers that pull against each other, how many attacks it catches and how many honest calls it gets in the way of.
 """)
 code("""
-%pip install -q catraca
+%pip install -q catraca==0.2.0
 """)
 code("""
 from catraca import ChannelConfig, ContextRegistry, Integrity

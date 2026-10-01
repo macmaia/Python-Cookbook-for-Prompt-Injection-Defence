@@ -6,7 +6,7 @@ md("""
 Every chapter so far showed catraca stopping something. This one shows it letting things through. Each section is an attack or a failure that the library, as designed, doesn't catch, with code that proves it. Knowing these is part of using it well, and a defence that hides its limits shouldn't be trusted with anything that matters.
 """)
 code("""
-%pip install -q catraca
+%pip install -q catraca==0.2.0
 """)
 code("""
 from catraca import Caller, ChannelConfig, ContextRegistry, DeclarativePolicy, Egress, EvidenceLog, Gate, MemorySink

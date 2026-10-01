@@ -6,7 +6,7 @@ md("""
 A filter loses the moment the attacker rewrites the injection. This chapter tries to make catraca lose the same way. The attacker wants a report emailed to `thief@evil.example`, and hides that address in a web page the agent reads, in seven different ways. In every case the stand-in model does what a fooled model would: it decodes, translates or works out the address and puts it in the `to` argument.
 """)
 code("""
-%pip install -q catraca
+%pip install -q catraca==0.2.0
 """)
 code("""
 import base64, codecs

@@ -6,7 +6,7 @@ md("""
 A defence nobody can audit is a promise. Every decision the gate makes, allowed or not, goes to an **evidence log**: a record of what was decided, why, and where each argument came from. This chapter looks at what a record holds, what it leaves out on purpose, and how to tell whether anyone has tampered with the log.
 """)
 code("""
-%pip install -q catraca
+%pip install -q catraca==0.2.0
 """)
 code("""
 import json, os

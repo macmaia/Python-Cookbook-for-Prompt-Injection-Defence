@@ -8,7 +8,7 @@ Sometimes the injected content contains the *right* value. A page the user asked
 catraca calls this a **coincidence**. It's the one place where the gate doesn't have a clean answer, so it gives you three options instead of guessing.
 """)
 code("""
-%pip install -q catraca
+%pip install -q catraca==0.2.0
 """)
 code("""
 from catraca import Caller, ChannelConfig, ContextRegistry, DeclarativePolicy, Egress, EvidenceLog, Gate, MemorySink

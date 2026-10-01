@@ -8,7 +8,7 @@ The registry says where a value came from. The **gate** decides what to do about
 This chapter builds a small travel agent with one tool, writes its policy, and goes through every way a call can be refused.
 """)
 code("""
-%pip install -q catraca
+%pip install -q catraca==0.2.0
 """)
 code("""
 from catraca import Caller, ChannelConfig, ContextRegistry, DeclarativePolicy, EvidenceLog, Gate, MemorySink

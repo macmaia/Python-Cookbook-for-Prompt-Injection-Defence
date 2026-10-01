@@ -11,7 +11,7 @@ Mode B rests on one assumption: the registry knows what's in the model's context
 Either way, mode B weakens without a sound. This chapter shows both failures, and `observe()`, which turns them into denials.
 """)
 code("""
-%pip install -q catraca
+%pip install -q catraca==0.2.0
 """)
 code("""
 from catraca import Caller, ChannelConfig, ContextRegistry, DeclarativePolicy, Egress, EvidenceLog, Gate, MemorySink

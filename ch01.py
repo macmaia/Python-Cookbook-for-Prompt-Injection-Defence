@@ -14,7 +14,7 @@ The "model" in this book is a short Python function that makes the tool call a l
 ```
 """)
 code("""
-%pip install -q catraca
+%pip install -q catraca==0.2.0
 """)
 md("""
 ## The shop, the tool and the ticket

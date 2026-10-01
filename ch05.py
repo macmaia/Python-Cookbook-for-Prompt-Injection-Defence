@@ -8,7 +8,7 @@ Chapters 1 to 4 were about an injected value in an argument that says *where*: a
 The best-known case is EchoLeak (CVE-2025-32711): a crafted email made an AI assistant put a Markdown image in its reply, and the client fetched the image, sending data to the attacker's server in the URL. No click was needed. This chapter rebuilds the pattern on a small scale and stops it with catraca's **egress** checks.
 """)
 code("""
-%pip install -q catraca
+%pip install -q catraca==0.2.0
 """)
 code("""
 from catraca import Caller, ChannelConfig, ContextRegistry, DeclarativePolicy, Egress, EvidenceLog, Gate, MemorySink

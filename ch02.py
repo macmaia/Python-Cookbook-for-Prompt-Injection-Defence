@@ -8,7 +8,7 @@ Chapter 1 ended with a gate that denied the injected call without reading the in
 Everything here is catraca's mode B, which works with an agent you already have. You tell the registry what text enters the context and through which door. It never sees the model's reasoning, and it doesn't need to.
 """)
 code("""
-%pip install -q catraca
+%pip install -q catraca==0.2.0
 """)
 md("""
 ## Channels: every text enters through a door

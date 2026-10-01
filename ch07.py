@@ -8,7 +8,7 @@ Everything so far was **mode B**: the agent plans as it goes, reads untrusted co
 **Mode A** trades flexibility for a guarantee. The plan is written from the user's request alone, before anything untrusted is read, and sealed. Untrusted data can then fill in *content* (a summary, a subject line) but never decide which tools run or where anything goes. The idea comes from CaMeL (Debenedetti et al., 2025) and the dual LLM pattern. catraca's version is deliberately small: straight-line plans, no interpreter.
 """)
 code("""
-%pip install -q catraca
+%pip install -q catraca==0.2.0
 """)
 code("""
 from catraca import Caller, DeclarativePolicy, Egress, Gate
@@ -74,13 +74,27 @@ for step in result.steps:
 print("emails sent:", sent)
 """)
 md("""
-The injection got as far as it could: into the text of a summary. The email wasn't sent, because the gate still checks every step, and egress found an address nobody allowed in the body. With an honest quarantine the same sealed plan runs through:
+The injection got as far as it could: into the text of a summary. The email wasn't sent, because the gate still checks every step, and egress found an address nobody allowed in the body.
+
+A sealed plan runs once. Running the same one again is refused, so a plan someone captured can't be replayed:
+""")
+code("""
+try:
+    runner.run(sealed)
+except PlanError as exc:
+    print("PlanError:", exc)
+""")
+md("""
+Sealing again makes a new plan. With an honest quarantine it runs through:
 """)
 code("""
 honest = PlanRunner(Gate(None, policy, egress=egress, evidence=None), tools,
                     caller=ana, seal_key=KEY,
                     quarantine=lambda instruction, data, schema: "Printer on floor 3 broken, needs a technician.")
-print(honest.run(sealed).status, sent[-1])
+print(honest.run(plan.seal(KEY)).status, sent[-1])
+""")
+md("""
+Runners in different processes keep track separately, so give them a shared `ran=` store (any store with an atomic `claim`) if more than one can see the same plan.
 """)
 md("""
 ## What a plan isn't allowed to do
