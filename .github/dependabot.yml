@@ -10,3 +10,8 @@ updates:
     directory: /
     schedule:
       interval: weekly
+    ignore:
+      # Jupyter Book 2 is a different system that doesn't read _config.yml,
+      # _toc.yml or the Sphinx extensions this book uses.
+      - dependency-name: jupyter-book
+        update-types: ["version-update:semver-major"]

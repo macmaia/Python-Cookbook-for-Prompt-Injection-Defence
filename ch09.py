@@ -21,6 +21,8 @@ policy = DeclarativePolicy.from_dict({"version": 1, "tools": {"send_email": {
     "callers": {"tenants": ["acme"], "users": "*"},
     "args": {"to": {}, "body": {"integrity": "ANY"}},
 }}})
+# Open on purpose, so this chapter shows provenance on its own. In your own app,
+# list the real destinations instead (chapter 5 shows how).
 egress = Egress.from_dict({"version": 1, "tools": {"send_email": {"emails": ["*"]}}})
 ana = Caller(tenant="acme", user="ana")
 

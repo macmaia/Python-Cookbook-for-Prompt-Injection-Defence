@@ -9,7 +9,7 @@ Author: Maria Alice Maia. Library: https://github.com/macmaia/catraca. Package: 
 - [Your agent followed an instruction it read in a ticket](https://macmaia.github.io/Python-Cookbook-for-Prompt-Injection-Defence/01-your-agent-followed-an-instruction.html): Indirect prompt injection end to end: an agent leaks another customer's data, a keyword filter misses three rewordings, and a provenance check denies all four.
 - [Where did this argument come from?](https://macmaia.github.io/Python-Cookbook-for-Prompt-Injection-Defence/02-where-did-this-argument-come-from.html): Channels, integrity and confidentiality labels, and the whole-token rule that decides whether a tool-call argument is trusted.
 - [A gate, not a filter](https://macmaia.github.io/Python-Cookbook-for-Prompt-Injection-Defence/03-a-gate-not-a-filter.html): A declarative policy, the three verdicts, reason codes, failing closed, and linting a policy that was loosened too far.
-- [Rewording doesn't help the attacker](https://macmaia.github.io/Python-Cookbook-for-Prompt-Injection-Defence/04-rewording-doesnt-help.html): The same injected address hidden eight ways (base64, rot13, leetspeak, homoglyphs, spelled out, described, translated), all denied for the same reason.
+- [Rewording doesn't help the attacker](https://macmaia.github.io/Python-Cookbook-for-Prompt-Injection-Defence/04-rewording-doesnt-help.html): The same injected address hidden seven ways (base64, rot13, leetspeak, homoglyphs, spelled out, described, translated), all denied for the same reason.
 - [Exfiltration through a link](https://macmaia.github.io/Python-Cookbook-for-Prompt-Injection-Defence/05-exfiltration-through-a-link.html): The EchoLeak pattern: Markdown images, redirectors and scheme-relative links in a message body, stopped by egress allowlists and link provenance.
 - [When the value is yours and the attacker's](https://macmaia.github.io/Python-Cookbook-for-Prompt-Injection-Defence/06-when-the-value-is-yours-and-theirs.html): Coincidences, single-use confirmation tokens bound to the call, and measuring the coincidence rate before turning confirmation on.
 - [Plans the injection can't change](https://macmaia.github.io/Python-Cookbook-for-Prompt-Injection-Defence/07-plans-the-injection-cant-change.html): CaMeL-style sealed plans: literal destinations, a quarantine model for untrusted data, human confirmation, and what the guarantee costs.
@@ -17,3 +17,9 @@ Author: Maria Alice Maia. Library: https://github.com/macmaia/catraca. Package: 
 - [The log an auditor can read](https://macmaia.github.io/Python-Cookbook-for-Prompt-Injection-Defence/09-the-log-an-auditor-can-read.html): A hash-chained, pseudonymised decision log: what a record holds, tamper detection, signed checkpoints, replay and statistics, with LGPD and GDPR notes.
 - [Measuring it on yourself](https://macmaia.github.io/Python-Cookbook-for-Prompt-Injection-Defence/10-measuring-it-on-yourself.html): Catch rate, false positives, Wilson intervals and latency on your own cases, and how to read published benchmark numbers.
 - [What none of this does](https://macmaia.github.io/Python-Cookbook-for-Prompt-Injection-Defence/11-what-none-of-this-does.html): The limits, each with code: choosing among the user's own values, the wrong tool with the right values, leaks in reply text, denial by coincidence.
+
+## Optional
+
+- [catraca README](https://github.com/macmaia/catraca/blob/main/README.md): what the library promises in each mode, and its limits.
+- [catraca BENCHMARK.md](https://github.com/macmaia/catraca/blob/main/BENCHMARK.md): the published numbers and how to check them.
+- [catraca threat model](https://github.com/macmaia/catraca/blob/main/docs/threat-model.md): who is assumed hostile and what is out of scope.
